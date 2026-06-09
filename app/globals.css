@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Surfaces */
+  --color-bg: #ffffff;
+  --color-surface: #f7f9fc;
+  --color-ink: #0b1f3a;
+  --color-ink-muted: #56627a;
+  --color-line: #e4eaf2;
+
+  /* Brand blue scale */
+  --color-brand-50: #eaf4ff;
+  --color-brand-100: #d4e9ff;
+  --color-brand-200: #a9d2ff;
+  --color-brand-300: #7ab7ff;
+  --color-brand-400: #4f9cff;
+  --color-brand-500: #2a7ee6;
+  --color-brand-600: #1e62b8;
+  --color-brand-700: #154a8c;
+  --color-brand-800: #0e3666;
+  --color-brand-900: #0a2549;
+
+  /* Accents */
+  --color-sea: #56b2e8;
+  --color-sand: #f5efe6;
+  --color-sun: #f2a93b;
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, #56b2e8 0%, #2a7ee6 50%, #1e62b8 100%);
+  --gradient-sky: linear-gradient(180deg, #eaf4ff 0%, #ffffff 100%);
+  --gradient-sand: linear-gradient(180deg, #f5efe6 0%, #ffffff 100%);
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(11, 31, 58, 0.04);
+  --shadow-md: 0 8px 24px rgba(11, 31, 58, 0.08);
+  --shadow-lg: 0 24px 48px rgba(11, 31, 58, 0.12);
+  --shadow-brand: 0 16px 32px rgba(42, 126, 230, 0.2);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-brand-900);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(11, 31, 58, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(11, 31, 58, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
