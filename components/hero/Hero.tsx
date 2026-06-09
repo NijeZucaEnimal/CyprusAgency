@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { HeroParallax } from "./HeroParallax";
@@ -15,21 +15,11 @@ export function Hero() {
       <Container className="relative z-10 grid items-center gap-10 pb-12 lg:grid-cols-12 lg:gap-8 lg:pb-20">
         {/* Tekst */}
         <div className="lg:col-span-5">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/70 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-700 shadow-sm backdrop-blur"
-          >
-            <MapPin className="h-3.5 w-3.5" />
-            Severni Kipar — Mediteran u srcu Evrope
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-5 text-display-xl text-balance"
+            className="text-display-xl text-balance"
           >
             Vaš dom uz{" "}
             <span className="bg-gradient-brand bg-clip-text text-transparent">
