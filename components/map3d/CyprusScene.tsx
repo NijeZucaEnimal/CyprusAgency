@@ -20,21 +20,31 @@ export function CyprusScene({ activeCity, onSelectCity }: Props) {
     <>
       <CameraRig activeCity={activeCity} />
 
-      {/* Mekana ambijentalna svetlost */}
-      <ambientLight intensity={0.55} color="#F0F6FF" />
+      {/* Mekana ambijentalna svetlost — daje boju koja podseća na nebo */}
+      <ambientLight intensity={0.55} color="#EDF4FF" />
 
-      {/* Glavna direkciona (sunce) iz jugoistoka */}
+      {/* Glavna direkciona "sunce" — postavljeno SE da baci senke ka NW */}
       <directionalLight
-        position={[8, 12, 6]}
-        intensity={1.2}
+        position={[10, 18, 8]}
+        intensity={1.4}
         color="#FFF1D6"
         castShadow
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+        shadow-camera-left={-25}
+        shadow-camera-right={25}
+        shadow-camera-top={25}
+        shadow-camera-bottom={-25}
+        shadow-camera-near={0.5}
+        shadow-camera-far={60}
+        shadow-bias={-0.0005}
       />
 
-      {/* Hemisferna za blago izjednačavanje senki */}
-      <hemisphereLight args={["#BDE3F7", "#E5C9A0", 0.45]} />
+      {/* Hemisferna — nebo plavo gore, peščano dole — daje fotorealistično izjednačavanje */}
+      <hemisphereLight args={["#B8DCF5", "#E8C99A", 0.55]} />
+
+      {/* Suptilan fill light sa zapada da osvetli senovitu stranu planina */}
+      <directionalLight position={[-12, 8, -4]} intensity={0.35} color="#D8E8FF" />
 
       <Sea />
       <CyprusShape />

@@ -15,7 +15,7 @@ export function CyprusMap3D() {
     <div className="absolute inset-0 overflow-hidden">
       <Canvas
         shadows
-        camera={{ position: [0, 14, 16], fov: 38, near: 0.1, far: 100 }}
+        camera={{ position: [0, 22, 30], fov: 38, near: 0.1, far: 200 }}
         dpr={isMobile ? [1, 1.5] : [1, 2]}
         gl={{ antialias: true, alpha: true }}
         style={{ background: "transparent" }}

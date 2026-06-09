@@ -5,33 +5,55 @@ import { useFrame } from "@react-three/fiber";
 import type * as THREE from "three";
 
 /**
- * Velika ravan koja predstavlja more. Lagana animacija — fina pulsacija
- * "shimmer" efekta kroz materijal — bez pravih talasa, čisto i premium.
+ * Slojeviti prikaz mora:
+ *  - Donja velika ravan: dublje plava (osnovna boja)
+ *  - Gornji sjajni sloj: blago animiran, daje "shimmer" osećaj
+ * Bez teksturа — premium, čisto, brzo.
  */
 export function Sea() {
-  const ref = useRef<THREE.Mesh>(null);
+  const shimmerRef = useRef<THREE.Mesh>(null);
 
   useFrame(({ clock }) => {
-    if (ref.current) {
+    if (shimmerRef.current) {
       const t = clock.getElapsedTime();
-      // Vrlo blagi vertikalni pomak — kao da more "diše"
-      ref.current.position.y = -0.05 + Math.sin(t * 0.6) * 0.005;
+      shimmerRef.current.position.y = -0.04 + Math.sin(t * 0.5) * 0.004;
+      const mat = shimmerRef.current.material as THREE.MeshStandardMaterial;
+      mat.opacity = 0.35 + Math.sin(t * 0.4) * 0.05;
     }
   });
 
   return (
-    <mesh
-      ref={ref}
-      position={[0, -0.05, 0]}
-      rotation={[-Math.PI / 2, 0, 0]}
-      receiveShadow
-    >
-      <planeGeometry args={[120, 120, 1, 1]} />
-      <meshStandardMaterial
-        color="#5EB7E8"
-        roughness={0.25}
-        metalness={0.15}
-      />
-    </mesh>
+    <group>
+      {/* Dublji sloj — osnova */}
+      <mesh
+        position={[0, -0.08, 0]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        receiveShadow
+      >
+        <planeGeometry args={[160, 160, 1, 1]} />
+        <meshStandardMaterial
+          color="#3A95C8"
+          roughness={0.4}
+          metalness={0.2}
+        />
+      </mesh>
+
+      {/* Gornji shimmer sloj — svetlija plava, blago providan */}
+      <mesh
+        ref={shimmerRef}
+        position={[0, -0.04, 0]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        receiveShadow
+      >
+        <planeGeometry args={[160, 160, 1, 1]} />
+        <meshStandardMaterial
+          color="#7CC4E8"
+          roughness={0.2}
+          metalness={0.35}
+          transparent
+          opacity={0.4}
+        />
+      </mesh>
+    </group>
   );
 }
