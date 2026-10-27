@@ -40,18 +40,59 @@ const config: Config = {
           900: "var(--color-brand-900)",
           DEFAULT: "var(--color-brand-500)",
         },
+        gold: {
+          50: "var(--color-gold-50)",
+          100: "var(--color-gold-100)",
+          200: "var(--color-gold-200)",
+          300: "var(--color-gold-300)",
+          400: "var(--color-gold-400)",
+          500: "var(--color-gold-500)",
+          600: "var(--color-gold-600)",
+          700: "var(--color-gold-700)",
+          DEFAULT: "var(--color-gold-400)",
+        },
+        kismet: {
+          50: "var(--color-slate-50)",
+          100: "var(--color-slate-100)",
+          200: "var(--color-slate-200)",
+          300: "var(--color-slate-300)",
+          400: "var(--color-slate-400)",
+          500: "var(--color-slate-500)",
+          DEFAULT: "var(--color-slate-300)",
+        },
+        // Backwards-compat aliases — sada upućuju na nove vrednosti
         sea: "var(--color-sea)",
         sand: "var(--color-sand)",
         sun: "var(--color-sun)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
+        serif: [
+          "var(--font-serif)",
+          "Cormorant Garamond",
+          "Georgia",
+          "ui-serif",
+          "serif",
+        ],
       },
       fontSize: {
-        "display-xl": ["clamp(2.75rem, 6vw, 5rem)", { lineHeight: "1.04", letterSpacing: "-0.03em", fontWeight: "700" }],
-        "display-lg": ["clamp(2.25rem, 4.5vw, 3.75rem)", { lineHeight: "1.06", letterSpacing: "-0.025em", fontWeight: "700" }],
-        "display-md": ["clamp(1.75rem, 3vw, 2.5rem)", { lineHeight: "1.12", letterSpacing: "-0.02em", fontWeight: "700" }],
-        eyebrow: ["0.8125rem", { lineHeight: "1.2", letterSpacing: "0.12em", fontWeight: "600" }],
+        // Display: sada 500 weight jer je serif (Cormorant) i izgleda heavy
+        "display-xl": [
+          "clamp(2.75rem, 6.5vw, 5.25rem)",
+          { lineHeight: "1.04", letterSpacing: "-0.02em", fontWeight: "500" },
+        ],
+        "display-lg": [
+          "clamp(2.25rem, 4.8vw, 4rem)",
+          { lineHeight: "1.06", letterSpacing: "-0.018em", fontWeight: "500" },
+        ],
+        "display-md": [
+          "clamp(1.75rem, 3.2vw, 2.75rem)",
+          { lineHeight: "1.1", letterSpacing: "-0.015em", fontWeight: "500" },
+        ],
+        eyebrow: [
+          "0.75rem",
+          { lineHeight: "1.2", letterSpacing: "0.18em", fontWeight: "600" },
+        ],
       },
       borderRadius: {
         sm: "var(--radius-sm)",
@@ -59,7 +100,8 @@ const config: Config = {
         md: "var(--radius-md)",
         lg: "var(--radius-lg)",
         xl: "var(--radius-xl)",
-        "2xl": "2.25rem",
+        "2xl": "1.25rem",
+        "3xl": "1.5rem",
       },
       boxShadow: {
         sm: "var(--shadow-sm)",
@@ -67,11 +109,14 @@ const config: Config = {
         md: "var(--shadow-md)",
         lg: "var(--shadow-lg)",
         brand: "var(--shadow-brand)",
+        gold: "var(--shadow-gold)",
       },
       backgroundImage: {
         "gradient-brand": "var(--gradient-brand)",
+        "gradient-gold": "var(--gradient-gold)",
         "gradient-sky": "var(--gradient-sky)",
         "gradient-sand": "var(--gradient-sand)",
+        "gradient-slate": "var(--gradient-slate)",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out both",

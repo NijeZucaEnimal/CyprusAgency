@@ -3,46 +3,67 @@
 @tailwind utilities;
 
 :root {
-  /* Surfaces */
-  --color-bg: #ffffff;
-  --color-surface: #f7f9fc;
-  --color-ink: #0b1f3a;
-  --color-ink-muted: #56627a;
-  --color-line: #e4eaf2;
+  /* ───── Surfaces (ivory base — Kismet brand) ───── */
+  --color-bg: #f5efe1;            /* Kismet ivory — primarna pozadina */
+  --color-surface: #ece4d1;       /* dublji krem — karta sekcije */
+  --color-ink: #0d1b36;           /* Kismet duboki teget — tekst */
+  --color-ink-muted: #5a6478;     /* muted navy-slate */
+  --color-line: #ddd2bb;          /* ivory linija */
 
-  /* Brand blue scale */
-  --color-brand-50: #eaf4ff;
-  --color-brand-100: #d4e9ff;
-  --color-brand-200: #a9d2ff;
-  --color-brand-300: #7ab7ff;
-  --color-brand-400: #4f9cff;
-  --color-brand-500: #2a7ee6;
-  --color-brand-600: #1e62b8;
-  --color-brand-700: #154a8c;
-  --color-brand-800: #0e3666;
-  --color-brand-900: #0a2549;
+  /* ───── Brand: Kismet navy skala ───── */
+  --color-brand-50: #eef0f5;
+  --color-brand-100: #d4dae5;
+  --color-brand-200: #a9b3c7;
+  --color-brand-300: #6e7c99;
+  --color-brand-400: #3f5476;
+  --color-brand-500: #1b3a66;     /* PRIMARNI brand (lighter navy) */
+  --color-brand-600: #122d52;
+  --color-brand-700: #0d1b36;     /* Kismet navy iz PDF-a */
+  --color-brand-800: #091430;
+  --color-brand-900: #050d1f;     /* skoro crna sa teget podtonom */
 
-  /* Accents */
-  --color-sea: #56b2e8;
-  --color-sand: #f5efe6;
-  --color-sun: #f2a93b;
+  /* ───── Kismet gold / šampanj — luksuzni akcenat ───── */
+  --color-gold-50: #fbf6ea;
+  --color-gold-100: #f3e8ca;
+  --color-gold-200: #e3cfa0;
+  --color-gold-300: #d1b47c;      /* svetli šampanj */
+  --color-gold-400: #b8945e;      /* GLAVNI Kismet zlatni iz PDF-a */
+  --color-gold-500: #a68250;
+  --color-gold-600: #8a6a40;
+  --color-gold-700: #6c5333;
 
-  /* Gradients */
-  --gradient-brand: linear-gradient(135deg, #56b2e8 0%, #2a7ee6 50%, #1e62b8 100%);
-  --gradient-sky: linear-gradient(180deg, #eaf4ff 0%, #ffffff 100%);
-  --gradient-sand: linear-gradient(180deg, #f5efe6 0%, #ffffff 100%);
+  /* ───── Kismet slate — plavo-sivi iz PDF-a (nova paleta) ───── */
+  --color-slate-50: #f1f3f6;
+  --color-slate-100: #e0e4ea;
+  --color-slate-200: #c8ced8;
+  --color-slate-300: #a0a9b4;     /* GLAVNI slate iz PDF-a */
+  --color-slate-400: #7f8995;
+  --color-slate-500: #616b78;
 
-  /* Radii */
-  --radius-sm: 0.5rem;
-  --radius-md: 0.875rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 1.75rem;
+  /* ───── Aliases (kompatibilnost sa starim komponentama) ───── */
+  --color-sea: #1b3a66;           /* Kismet navy */
+  --color-sand: #ece4d1;          /* cream surface */
+  --color-sun: #b8945e;           /* Kismet gold */
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(11, 31, 58, 0.04);
-  --shadow-md: 0 8px 24px rgba(11, 31, 58, 0.08);
-  --shadow-lg: 0 24px 48px rgba(11, 31, 58, 0.12);
-  --shadow-brand: 0 16px 32px rgba(42, 126, 230, 0.2);
+  /* ───── Gradienti ───── */
+  --gradient-brand: linear-gradient(135deg, #1b3a66 0%, #0d1b36 60%, #050d1f 100%);
+  --gradient-gold: linear-gradient(135deg, #d1b47c 0%, #b8945e 100%);
+  --gradient-sky: linear-gradient(180deg, #f5efe1 0%, #ece4d1 100%);
+  --gradient-sand: linear-gradient(180deg, #ece4d1 0%, #f5efe1 100%);
+  --gradient-slate: linear-gradient(180deg, #c8ced8 0%, #a0a9b4 100%);
+
+  /* ───── Senke — suptilnije, sa teget tonom ───── */
+  --shadow-sm: 0 1px 2px rgba(13, 27, 54, 0.05);
+  --shadow-md: 0 6px 16px rgba(13, 27, 54, 0.08);
+  --shadow-lg: 0 16px 40px rgba(13, 27, 54, 0.12);
+  --shadow-brand: 0 12px 28px rgba(13, 27, 54, 0.25);
+  --shadow-gold: 0 10px 24px rgba(184, 148, 94, 0.4);
+
+  /* ───── Radius — arhitekturno ───── */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
 }
 
 @layer base {
@@ -58,15 +79,45 @@
     font-feature-settings: "ss01", "cv11";
   }
 
+  /* H1/H2 default → serif (elegantni Cormorant). H3+ ostaju sans. */
+  h1,
+  h2 {
+    font-family: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+  }
+
   ::selection {
-    background-color: var(--color-brand-200);
+    background-color: var(--color-gold-200);
     color: var(--color-brand-900);
   }
 
   *:focus-visible {
-    outline: 2px solid var(--color-brand-500);
+    outline: 2px solid var(--color-gold-400);
     outline-offset: 3px;
     border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Display klase automatski dobijaju serif (i preko h3+ ako se direktno koriste) */
+  .text-display-xl,
+  .text-display-lg,
+  .text-display-md {
+    font-family: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  }
+
+  /* Premium ornament — zlatna linija ispod naslova */
+  .gold-rule {
+    position: relative;
+  }
+  .gold-rule::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 2px;
+    margin-top: 1.25rem;
+    background: var(--gradient-gold);
   }
 }
 
@@ -79,8 +130,12 @@
   }
   .bg-grid {
     background-image:
-      linear-gradient(to right, rgba(11, 31, 58, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(11, 31, 58, 0.04) 1px, transparent 1px);
+      linear-gradient(to right, rgba(13, 27, 54, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(13, 27, 54, 0.04) 1px, transparent 1px);
     background-size: 48px 48px;
+  }
+  .font-serif-italic {
+    font-family: var(--font-serif), Georgia, serif;
+    font-style: italic;
   }
 }

@@ -1,4 +1,4 @@
-# Stay Property
+# Kismet Real Estate
 
 Premium veb-sajt agencije za nekretnine na Severnom Kipru. Ciljana publika: srpski kupci.
 
@@ -46,11 +46,11 @@ Sve boje, radius i shadow vrednosti su CSS varijable u `app/globals.css` i izlo�
 
 | Token              | Vrednost                                  |
 | ------------------ | ----------------------------------------- |
-| `--color-ink`      | `#0B1F3A` — tamno teget tekst             |
-| `--color-brand-500`| `#2A7EE6` — primarna brand plava          |
-| `--color-sea`      | `#56B2E8` — svetlije plavo (3D more)      |
-| `--color-sand`     | `#F5EFE6` — topla podloga za sekcije      |
-| `--color-sun`      | `#F2A93B` — topli akcent                  |
-| `--gradient-brand` | `sea → brand-500 → brand-700`             |
+| `--color-ink`      | `#0d1b36` — Kismet navy (tekst)           |
+| `--color-brand-700`| `#0d1b36` — primarni Kismet navy          |
+| `--color-gold-400` | `#b8945e` — Kismet šampanj zlato          |
+| `--color-slate-300`| `#a0a9b4` — plavo-sivi akcenat            |
+| `--color-bg`       | `#f5efe1` — ivory podloga                 |
+| `--gradient-brand` | `brand-500 → brand-700 → brand-900`       |
 
-Tipografija: **Plus Jakarta Sans** (preko `next/font/google`).
+Tipografija: **Inter** (sans) + **Cormorant Garamond** (serif) — preko `next/font/google`.

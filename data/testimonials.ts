@@ -9,7 +9,7 @@ export const testimonials: Testimonial[] = [
     bought: "2+1 stan u Kireniji",
     rating: 5,
     text:
-      "Tim Stay Property nas je vodio kroz ceo proces — od prvog poziva do potpisa kod notara. Sve je urađeno transparentno, bez skrivenih troškova, na našem jeziku. Stan u Kireniji već donosi prihod od izdavanja.",
+      "Tim Kismet Real Estate nas je vodio kroz ceo proces — od prvog poziva do potpisa kod notara. Sve je urađeno transparentno, bez skrivenih troškova, na našem jeziku. Stan u Kireniji već donosi prihod od izdavanja.",
   },
   {
     id: "t2",
@@ -19,7 +19,7 @@ export const testimonials: Testimonial[] = [
     bought: "Vila u Esentepe",
     rating: 5,
     text:
-      "Tražili smo mesto gde će deca odrastati uz more i sunce 340 dana godišnje. Stay Property nam je organizovao 4 ture, slali su nam i video pregled. Vila je tačno kao na slikama, papiri za VNŽ završeni za 3 nedelje.",
+      "Tražili smo mesto gde će deca odrastati uz more i sunce 340 dana godišnje. Kismet Real Estate nam je organizovao 4 ture, slali su nam i video pregled. Vila je tačno kao na slikama, papiri za VNŽ završeni za 3 nedelje.",
   },
   {
     id: "t3",
@@ -29,7 +29,7 @@ export const testimonials: Testimonial[] = [
     bought: "1+1 stan u Famagusti",
     rating: 5,
     text:
-      "Sa skromnom penzijom mislio sam da Kipar nije za mene. Stay Property mi je našao stan u Famagusti za 65 hiljada evra, na 24 rate bez kamate. Sada živim ovde 6 meseci godišnje, klima i ljudi su čudo.",
+      "Sa skromnom penzijom mislio sam da Kipar nije za mene. Kismet Real Estate mi je našao stan u Famagusti za 65 hiljada evra, na 24 rate bez kamate. Sada živim ovde 6 meseci godišnje, klima i ljudi su čudo.",
   },
   {
     id: "t4",
@@ -49,7 +49,7 @@ export const testimonials: Testimonial[] = [
     bought: "Studio na Long Beachu",
     rating: 5,
     text:
-      "Kupio sam studio na Long Beachu kao investiciju. Stay Property mi je obezbedio management — sami se brinu o izdavanju i čišćenju. Mesečno dobijam jasne izveštaje na email.",
+      "Kupio sam studio na Long Beachu kao investiciju. Kismet Real Estate mi je obezbedio management — sami se brinu o izdavanju i čišćenju. Mesečno dobijam jasne izveštaje na email.",
   },
   {
     id: "t6",

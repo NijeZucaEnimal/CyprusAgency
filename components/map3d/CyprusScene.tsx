@@ -12,22 +12,19 @@ type Props = {
   onSelectCity: (city: City | null) => void;
 };
 
-/**
- * Glavni Three.js sadržaj scene — ide unutar Canvas-a.
- */
 export function CyprusScene({ activeCity, onSelectCity }: Props) {
   return (
     <>
       <CameraRig activeCity={activeCity} />
 
-      {/* Mekana ambijentalna svetlost — daje boju koja podseća na nebo */}
-      <ambientLight intensity={0.55} color="#EDF4FF" />
+      {/* Ambijentalna — topli šampanj ton da daje "zlatni sat" osećaj */}
+      <ambientLight intensity={0.5} color="#F5E9CC" />
 
-      {/* Glavna direkciona "sunce" — postavljeno SE da baci senke ka NW */}
+      {/* Glavno "sunce" — toplo zlato sa SE pravca */}
       <directionalLight
         position={[10, 18, 8]}
-        intensity={1.4}
-        color="#FFF1D6"
+        intensity={1.3}
+        color="#FFE7A8"
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -40,16 +37,19 @@ export function CyprusScene({ activeCity, onSelectCity }: Props) {
         shadow-bias={-0.0005}
       />
 
-      {/* Hemisferna — nebo plavo gore, peščano dole — daje fotorealistično izjednačavanje */}
-      <hemisphereLight args={["#B8DCF5", "#E8C99A", 0.55]} />
+      {/* Hemisferna — nebo teget gore, peščano dole */}
+      <hemisphereLight args={["#4A6B8C", "#E8C99A", 0.5]} />
 
-      {/* Suptilan fill light sa zapada da osvetli senovitu stranu planina */}
-      <directionalLight position={[-12, 8, -4]} intensity={0.35} color="#D8E8FF" />
+      {/* Fill light sa zapada — duboki teget za senke planina */}
+      <directionalLight
+        position={[-12, 8, -4]}
+        intensity={0.4}
+        color="#B8C9DD"
+      />
 
       <Sea />
       <CyprusShape />
 
-      {/* Pozadinski klik (zatvori karticu) */}
       <mesh
         position={[0, -0.1, 0]}
         rotation={[-Math.PI / 2, 0, 0]}

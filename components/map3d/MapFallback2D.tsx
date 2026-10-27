@@ -9,14 +9,11 @@ import { cyprusBoundary } from "@/data/cyprusBoundary";
 import { projectXZ } from "./projection";
 
 /**
- * Lakša 2D SVG mapa za mobilne uređaje. Bez Three.js — manja batterija,
- * brže učitavanje. Markeri pulsiraju, klik otvara istu karticu kao 3D.
+ * SVG 2D mapa za mobilne uređaje — luksuzna nokturno paleta.
  */
 export function MapFallback2D() {
   const [activeCity, setActiveCity] = useState<City | null>(null);
 
-  // Računamo bounding box projektovanih tačaka da bismo SVG viewport
-  // automatski pratio formu (ne hardkoduje viewBox).
   const projected = cyprusBoundary.map(([lng, lat]) => projectXZ(lng, lat));
   const xs = projected.map(([x]) => x);
   const zs = projected.map(([, z]) => z);
@@ -32,7 +29,7 @@ export function MapFallback2D() {
     .join(" ");
 
   return (
-    <div className="absolute inset-0 grid place-items-center bg-gradient-sky p-6">
+    <div className="absolute inset-0 grid place-items-center bg-gradient-to-b from-brand-800 to-brand-700 p-6">
       <div className="relative w-full max-w-xl">
         <svg
           viewBox={`0 0 ${width} ${height}`}
@@ -41,12 +38,12 @@ export function MapFallback2D() {
         >
           <defs>
             <linearGradient id="landGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#F8EFD9" />
-              <stop offset="100%" stopColor="#E5D2A8" />
+              <stop offset="0%" stopColor="#EFE3C8" />
+              <stop offset="100%" stopColor="#B8956A" />
             </linearGradient>
             <radialGradient id="markerGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#F2A93B" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#F2A93B" stopOpacity="0" />
+              <stop offset="0%" stopColor="#D9BE92" stopOpacity="0.7" />
+              <stop offset="100%" stopColor="#D9BE92" stopOpacity="0" />
             </radialGradient>
           </defs>
 
@@ -54,7 +51,7 @@ export function MapFallback2D() {
           <motion.polygon
             points={polygonPoints}
             fill="url(#landGradient)"
-            stroke="#C7B07A"
+            stroke="#9D7C57"
             strokeWidth={0.08}
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
@@ -86,7 +83,7 @@ export function MapFallback2D() {
                   cx={cx}
                   cy={cy}
                   r={isActive ? 0.55 : 0.4}
-                  fill={isActive ? "#FFD370" : "#F2A93B"}
+                  fill={isActive ? "#F5E9CC" : "#D9BE92"}
                   stroke="#fff"
                   strokeWidth={0.1}
                   initial={{ scale: 0 }}
@@ -99,7 +96,7 @@ export function MapFallback2D() {
                   fontSize={0.9}
                   fontWeight={700}
                   textAnchor="middle"
-                  fill="#0B1F3A"
+                  fill="#FAF7F1"
                   style={{ pointerEvents: "none" }}
                 >
                   {city.name}
@@ -115,7 +112,7 @@ export function MapFallback2D() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="mt-4 text-center text-xs font-medium text-ink-muted"
+              className="mt-4 text-center text-xs font-medium uppercase tracking-wider text-gold-200"
             >
               Tapnite na grad za detalje
             </motion.p>

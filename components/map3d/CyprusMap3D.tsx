@@ -26,9 +26,8 @@ export function CyprusMap3D() {
       </Canvas>
       <CityCard city={activeCity} onClose={() => setActiveCity(null)} />
 
-      {/* Suptilan upit za interakciju, prikazuje se dok nije izabran grad */}
       {!activeCity && (
-        <div className="pointer-events-none absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/80 px-4 py-1.5 text-xs font-medium text-ink-muted shadow-sm backdrop-blur">
+        <div className="pointer-events-none absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full border border-gold-300/40 bg-bg/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-ink shadow-sm backdrop-blur">
           Kliknite na grad za detalje
         </div>
       )}

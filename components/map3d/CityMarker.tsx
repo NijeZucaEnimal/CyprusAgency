@@ -22,27 +22,27 @@ export function CityMarker({ city, isActive, onSelect }: Props) {
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime();
     if (groupRef.current) {
-      // Lagano lebdenje
-      groupRef.current.position.y = y + Math.sin(t * 1.8 + city.coords.lng) * 0.04;
+      groupRef.current.position.y =
+        y + Math.sin(t * 1.6 + city.coords.lng) * 0.03;
     }
     if (ringRef.current) {
       const baseScale = isActive || hovered ? 1.6 : 1;
-      const pulse = 1 + Math.sin(t * 2.2) * 0.18;
+      const pulse = 1 + Math.sin(t * 2.0) * 0.15;
       ringRef.current.scale.setScalar(baseScale * pulse);
       const mat = ringRef.current.material as THREE.MeshBasicMaterial;
-      mat.opacity = 0.35 + Math.cos(t * 2.2) * 0.15;
+      mat.opacity = 0.4 + Math.cos(t * 2.0) * 0.15;
     }
   });
 
   return (
     <group ref={groupRef} position={[x, y, z]}>
-      {/* Spoljni puls (ring) */}
+      {/* Spoljni puls — šampanj zlato */}
       <mesh ref={ringRef} rotation={[-Math.PI / 2, 0, 0]}>
         <ringGeometry args={[0.18, 0.32, 32]} />
-        <meshBasicMaterial color="#F2A93B" transparent opacity={0.4} />
+        <meshBasicMaterial color="#D9BE92" transparent opacity={0.4} />
       </mesh>
 
-      {/* Glavna kapljica markera (gradient izgled preko emissive) */}
+      {/* Glavna kapljica markera — gold gradient feel preko emissive */}
       <mesh
         onPointerOver={(e) => {
           e.stopPropagation();
@@ -60,15 +60,15 @@ export function CityMarker({ city, isActive, onSelect }: Props) {
       >
         <sphereGeometry args={[0.18, 24, 24]} />
         <meshStandardMaterial
-          color={isActive ? "#FFD370" : "#F2A93B"}
-          emissive={isActive ? "#F2A93B" : "#C57A1A"}
-          emissiveIntensity={isActive || hovered ? 1.4 : 0.8}
-          roughness={0.3}
-          metalness={0.1}
+          color={isActive ? "#F5E9CC" : "#D9BE92"}
+          emissive={isActive ? "#C9A875" : "#9D7C57"}
+          emissiveIntensity={isActive || hovered ? 1.4 : 0.9}
+          roughness={0.25}
+          metalness={0.3}
         />
       </mesh>
 
-      {/* HTML labela iznad markera */}
+      {/* HTML labela iznad markera — luksuzni stil */}
       <Html
         position={[0, 0.45, 0]}
         center
@@ -77,7 +77,7 @@ export function CityMarker({ city, isActive, onSelect }: Props) {
         style={{ pointerEvents: "none" }}
       >
         <div
-          className={`whitespace-nowrap rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-ink shadow-md backdrop-blur transition-all duration-200 ${
+          className={`whitespace-nowrap rounded-sm border border-gold-300/60 bg-bg/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-ink shadow-md backdrop-blur transition-all duration-200 ${
             isActive || hovered ? "scale-110 opacity-100" : "opacity-90"
           }`}
         >

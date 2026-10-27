@@ -12,7 +12,7 @@ import { ArrowRight, Heart, MessageSquare, Languages } from "lucide-react";
 export const metadata: Metadata = {
   title: "O nama",
   description:
-    "Stay Property je agencija specijalizovana za srpske kupce nekretnina na Severnom Kipru — sa preko 20 godina iskustva i timom koji govori vaš jezik.",
+    "Kismet Real Estate je agencija specijalizovana za srpske kupce nekretnina na Severnom Kipru — sa preko 20 godina iskustva i timom koji govori vaš jezik.",
   alternates: { canonical: "/o-nama" },
 };
 
@@ -51,7 +51,7 @@ export default function AboutPage() {
                 Mediteran u srcu Evrope — sa partnerom koji razume i vas i Kipar
               </h1>
               <p className="mt-6 text-pretty text-lg text-ink-muted">
-                Stay Property je agencija specijalizovana za srpske kupce nekretnina
+                Kismet Real Estate je agencija specijalizovana za srpske kupce nekretnina
                 na Severnom Kipru. Više od 20 godina pomažemo porodicama, investitorima
                 i penzionerima da nađu svoj prostor — bez stresa, bez prevoda, bez
                 iznenađenja.
@@ -69,7 +69,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-lg">
                 <Image
                   src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?auto=format&fit=crop&w=900&q=80"
-                  alt="Kancelarija Stay Property u Kireniji"
+                  alt="Kancelarija Kismet Real Estate u Kireniji"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover"
@@ -89,7 +89,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-5 text-lg text-pretty text-ink-muted lg:col-span-7">
             <p>
-              Stay Property je počeo skromno, kao porodični biznis 2004. Naš tim je
+              Kismet Real Estate je počeo skromno, kao porodični biznis 2004. Naš tim je
               mešavina pravnika, arhitekata i agenata koji su godinama živeli i u
               Srbiji i na Kipru.
             </p>

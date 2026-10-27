@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import { site } from "@/data/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -7,10 +7,18 @@ import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { OrganizationJsonLd } from "@/components/seo/OrganizationJsonLd";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -42,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="sr-Latn" className={jakarta.variable}>
+    <html lang="sr-Latn" className={`${inter.variable} ${cormorant.variable}`}>
       <body className="font-sans text-ink antialiased">
         <OrganizationJsonLd />
         <Header />

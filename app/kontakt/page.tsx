@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontaktirajte Stay Property — konsultacije, obilasci nekretnina, pravna podrška i tura Severnog Kipra. Sve na srpskom.",
+    "Kontaktirajte Kismet Real Estate — konsultacije, obilasci nekretnina, pravna podrška i tura Severnog Kipra. Sve na srpskom.",
   alternates: { canonical: "/kontakt" },
 };
 

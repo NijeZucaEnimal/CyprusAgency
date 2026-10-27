@@ -7,7 +7,7 @@ export const articles: Article[] = [
     excerpt:
       "Detaljno poređenje cena, troškova kupovine i prinosa na ulaganje između severnog Kipra i grčkih ostrva.",
     publishedAt: "2026-05-12",
-    author: "Stay Property tim",
+    author: "Kismet Real Estate tim",
     category: "Poređenje",
     readingMinutes: 8,
     image:
@@ -30,7 +30,7 @@ Zaključak: ako primarni cilj ulaganja, severni Kipar ima jasnu prednost. Ako tr
     excerpt:
       "Kompletan vodič za prvi put kupce: od izbora regije do preuzimanja ključeva, sa svim papirima i troškovima.",
     publishedAt: "2026-04-28",
-    author: "Stay Property tim",
+    author: "Kismet Real Estate tim",
     category: "Vodič",
     readingMinutes: 10,
     image:
@@ -41,7 +41,7 @@ Korak 1 — Definiši cilj i budžet. Investicija (izdavanje), odmor ili stalni 
 
 Korak 2 — Izbor regije. Kirenija za likvidno tržište, İskele za rast vrednosti, Famagusta za studentsko izdavanje, Esentepe za luksuz, Lefke za pristupačnost.
 
-Korak 3 — Obilazak. Preporučujemo 3- do 5-dnevnu turu — pogledajte 5–10 objekata pre odluke. Stay Property organizuje sve, uključujući prevod i transfer.
+Korak 3 — Obilazak. Preporučujemo 3- do 5-dnevnu turu — pogledajte 5–10 objekata pre odluke. Kismet Real Estate organizuje sve, uključujući prevod i transfer.
 
 Korak 4 — Rezervacija. Plaćate 2.000 € depozita koji zaključava cenu i sklanja nekretninu sa tržišta na 30 dana. Vraća se ako ne potpišete.
 
@@ -57,7 +57,7 @@ Korak 7 — Preuzimanje i registracija. Ključevi, prijava struje/vode/interneta
     excerpt:
       "Ko ima pravo na boravak, šta od papira treba, koliko traje proces i koja prava donosi.",
     publishedAt: "2026-04-15",
-    author: "Stay Property tim",
+    author: "Kismet Real Estate tim",
     category: "Vodič",
     readingMinutes: 7,
     image:
@@ -80,7 +80,7 @@ Važna napomena: severni Kipar nije u EU, pa ovo NIJE EU boravak. Ipak, za mnoge
     excerpt:
       "Analiza najbrže rastuće priobalne zone severnog Kipra — cene, projekti, prinosi.",
     publishedAt: "2026-03-30",
-    author: "Stay Property tim",
+    author: "Kismet Real Estate tim",
     category: "Investicije",
     readingMinutes: 6,
     image:
@@ -91,7 +91,7 @@ Cene su porasle prosečno 18% godišnje od 2021. do 2025. — što znači da se 
 
 Tipovi nekretnina koji se nude: studio od 60.000 €, 1+1 od 90.000 €, 2+1 od 130.000 €. Većina dolazi sa planom plaćanja 35% učešća + rate bez kamate.
 
-Prihod od izdavanja: prosečno 9% bruto godišnje (kratkoročno izdavanje turistima), uz visoku popunjenost tokom 7 meseci sezone. Stay Property nudi i management — vi samo ubirate prihode na svoj račun.
+Prihod od izdavanja: prosečno 9% bruto godišnje (kratkoročno izdavanje turistima), uz visoku popunjenost tokom 7 meseci sezone. Kismet Real Estate nudi i management — vi samo ubirate prihode na svoj račun.
 
 Za koga je idealno? Za investitore koji ne traže "luksuz", već siguran rast vrednosti + prihod. Studio ili 1+1 stan u dobrom kompleksu skoro je nemoguće promašiti.`,
   },
@@ -101,7 +101,7 @@ Za koga je idealno? Za investitore koji ne traže "luksuz", već siguran rast vr
     excerpt:
       "Otvoren novi terminal aerodroma — kako to utiče na cene nekretnina i dostupnost ostrva.",
     publishedAt: "2026-03-10",
-    author: "Stay Property tim",
+    author: "Kismet Real Estate tim",
     category: "Vesti",
     readingMinutes: 4,
     image:
@@ -112,7 +112,7 @@ Posledice za tržište nekretnina su već vidljive: povećan broj direktnih leto
 
 Cene nekretnina u radijusu 30 minuta vožnje od aerodroma porasle su za 7% u poslednja 3 meseca — najviše İskele i Famagusta. Očekuje se nastavak rasta tokom 2026.
 
-Praktične informacije: Ercan je 40 km od Kirenije, 30 km od Famaguste, 25 km od İskele. Stay Property organizuje besplatan transfer za sve klijente koji dolaze na obilazak nekretnina.`,
+Praktične informacije: Ercan je 40 km od Kirenije, 30 km od Famaguste, 25 km od İskele. Kismet Real Estate organizuje besplatan transfer za sve klijente koji dolaze na obilazak nekretnina.`,
   },
   {
     slug: "troskovi-zivota-na-severnom-kipru-2026",
@@ -120,7 +120,7 @@ Praktične informacije: Ercan je 40 km od Kirenije, 30 km od Famaguste, 25 km od
     excerpt:
       "Realan budžet za mesečni život — od namirnica, struje i interneta do restorana i transporta.",
     publishedAt: "2026-02-22",
-    author: "Stay Property tim",
+    author: "Kismet Real Estate tim",
     category: "Vodič",
     readingMinutes: 7,
     image:

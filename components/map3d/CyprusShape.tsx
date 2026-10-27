@@ -9,11 +9,6 @@ import {
 } from "@/data/cyprusBoundary";
 import { projectXZ } from "./projection";
 
-/**
- * Helper: pravi THREE.Shape od polygon-a (lng, lat).
- * Koordinate se projektuju, pa se -z koristi za Y u Shape (jer mesh
- * rotiramo za -90° oko X — Y u Shape postaje svetski Z posle rotacije).
- */
 function buildShape(points: [number, number][]): THREE.Shape {
   const shape = new THREE.Shape();
   points.forEach(([lng, lat], i) => {
@@ -25,14 +20,13 @@ function buildShape(points: [number, number][]): THREE.Shape {
 }
 
 /**
- * Slojevi 3D kopna — premium topografski stil:
- *   1. Glavna ravan kopna (ekstrudovana, peščana — tlo)
- *   2. Tamniji obod ispod (vizuelna dubina obale)
- *   3. Kireniski planinski venac (povišen sloj, hladniji ton)
- *   4. Trodos planinski venac (povišen sloj, topliji rocky ton)
+ * Slojevi 3D kopna — luksuzni topografski stil:
+ *   1. Tamniji obod ispod (toplo bronza za dubinu obale)
+ *   2. Glavna ravan kopna (topli ivori, kao sun-bleached limestone)
+ *   3. Kireniski planinski venac (tamniji bronza ton)
+ *   4. Trodos planinski venac (širi, topliji rocky ton)
  */
 export function CyprusShape() {
-  // Glavna kopnena geometrija (ekstrudovana sa blagim bevel-om)
   const landGeometry = useMemo(() => {
     const shape = buildShape(cyprusBoundary);
     const geo = new THREE.ExtrudeGeometry(shape, {
@@ -48,7 +42,6 @@ export function CyprusShape() {
     return geo;
   }, []);
 
-  // Tanki obod ispod (samo gornja površina) — daje dubinu obali
   const shorelineGeometry = useMemo(() => {
     const shape = buildShape(cyprusBoundary);
     const geo = new THREE.ShapeGeometry(shape);
@@ -56,7 +49,6 @@ export function CyprusShape() {
     return geo;
   }, []);
 
-  // Kireniske planine — uži, povišen sloj
   const kyreniaGeometry = useMemo(() => {
     const shape = buildShape(kyreniaMountains);
     const geo = new THREE.ExtrudeGeometry(shape, {
@@ -72,7 +64,6 @@ export function CyprusShape() {
     return geo;
   }, []);
 
-  // Trodos planine — širi, niži dome
   const troodosGeometry = useMemo(() => {
     const shape = buildShape(troodosMountains);
     const geo = new THREE.ExtrudeGeometry(shape, {
@@ -90,23 +81,23 @@ export function CyprusShape() {
 
   return (
     <group>
-      {/* Sloj 1: tamniji obod ispod (vidiš ga sa boka kao "ploču obale") */}
+      {/* Sloj 1: tamniji obod (bronza dubina) */}
       <mesh position={[0, -0.04, 0]}>
         <primitive object={shorelineGeometry} attach="geometry" />
-        <meshStandardMaterial color="#C9B289" roughness={0.95} metalness={0} />
+        <meshStandardMaterial color="#9D7C57" roughness={0.95} metalness={0} />
       </mesh>
 
-      {/* Sloj 2: glavna ravan kopna — peščana */}
+      {/* Sloj 2: glavna ravan kopna — topli ivori/limestone */}
       <mesh geometry={landGeometry} castShadow receiveShadow>
         <meshStandardMaterial
-          color="#F2E6CC"
-          roughness={0.92}
+          color="#EFE3C8"
+          roughness={0.9}
           metalness={0}
-          envMapIntensity={0.35}
+          envMapIntensity={0.4}
         />
       </mesh>
 
-      {/* Sloj 3: Kireniski planinski venac — hladniji, prati severnu obalu */}
+      {/* Sloj 3: Kireniski planinski venac — bronza, prati severnu obalu */}
       <mesh
         geometry={kyreniaGeometry}
         position={[0, 0.45, 0]}
@@ -114,13 +105,13 @@ export function CyprusShape() {
         receiveShadow
       >
         <meshStandardMaterial
-          color="#C9B89A"
-          roughness={0.88}
-          metalness={0}
+          color="#B8956A"
+          roughness={0.85}
+          metalness={0.05}
         />
       </mesh>
 
-      {/* Sloj 4: Trodos venac — topliji, centralno-jugozapadno */}
+      {/* Sloj 4: Trodos venac — topliji rocky šampanj */}
       <mesh
         geometry={troodosGeometry}
         position={[0, 0.45, 0]}
@@ -128,9 +119,9 @@ export function CyprusShape() {
         receiveShadow
       >
         <meshStandardMaterial
-          color="#D9B886"
-          roughness={0.9}
-          metalness={0}
+          color="#C9A875"
+          roughness={0.88}
+          metalness={0.05}
         />
       </mesh>
     </group>
