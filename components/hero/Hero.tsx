@@ -56,20 +56,20 @@ export function Hero() {
           aria-hidden
         />
 
-        {/* Overlay za <xl ekrane — za čitljivost teksta kad je slika full-bleed */}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-900/80 via-brand-900/55 to-brand-900/30 xl:hidden" />
+        {/* Overlay za <xl — ivory wash da teget tekst bude čitljiv */}
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/95 via-bg/85 to-bg/60 xl:hidden" />
 
         {/* Zlatni glow gore-desno (sunce) */}
         <div className="pointer-events-none absolute -top-24 right-[-6rem] h-[28rem] w-[28rem] rounded-full bg-gradient-to-br from-gold-200/25 via-gold-300/10 to-transparent blur-3xl" />
       </div>
 
       <Container className="relative z-10 flex min-h-[80vh] items-center pb-20 pt-10 md:pt-16 lg:pb-28">
-        <div className="max-w-2xl text-white">
+        <div className="max-w-2xl text-brand-900 xl:text-white">
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-eyebrow uppercase text-gold-300"
+            className="text-eyebrow uppercase text-gold-500 xl:text-gold-300"
           >
             Severni Kipar — Premium nekretnine
           </motion.p>
@@ -78,10 +78,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mt-5 text-display-xl text-balance text-white"
+            className="mt-5 text-display-xl text-balance text-brand-900 xl:text-white"
           >
             Vaš dom uz{" "}
-            <span className="font-serif-italic text-gold-300">
+            <span className="font-serif-italic text-gold-500 xl:text-gold-300">
               340 sunčanih dana
             </span>{" "}
             godišnje
@@ -98,7 +98,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 max-w-xl text-pretty text-lg text-white/85"
+            className="mt-6 max-w-xl text-pretty text-lg text-brand-800/85 xl:text-white/85"
           >
             Pažljivo odabrane nekretnine na Mediteranu, kompletna pravna podrška
             na srpskom i rate bez kamate direktno od developera. Investicija sa
@@ -115,7 +115,13 @@ export function Hero() {
               Zakažite besplatne konsultacije
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button href="/nekretnine" size="lg" variant="outline">
+            {/* Secondary CTA — na mobilnom teget-on-ivory, na xl+ bela outline */}
+            <Button
+              href="/nekretnine"
+              size="lg"
+              variant="outline"
+              className="border-brand-700/30 bg-brand-900/5 text-brand-900 hover:border-gold-400 hover:bg-brand-900/10 hover:text-brand-700 xl:border-white/30 xl:bg-white/5 xl:text-white xl:hover:border-gold-300 xl:hover:bg-white/10 xl:hover:text-gold-200"
+            >
               Pogledajte nekretnine
             </Button>
           </motion.div>
@@ -125,24 +131,30 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-12 flex flex-wrap items-center gap-6 text-sm text-white/80"
+            className="mt-12 flex flex-wrap items-center gap-6 text-sm text-brand-800/80 xl:text-white/80"
           >
             <div className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-gold-300" />
+              <Sparkles className="h-4 w-4 text-gold-500 xl:text-gold-300" />
               <span>
-                <strong className="font-semibold text-white">850+</strong>{" "}
+                <strong className="font-semibold text-brand-900 xl:text-white">
+                  850+
+                </strong>{" "}
                 prodatih nekretnina
               </span>
             </div>
-            <div className="h-4 w-px bg-white/25" />
+            <div className="h-4 w-px bg-brand-900/20 xl:bg-white/25" />
             <div>
-              <strong className="font-semibold text-white">20+</strong> godina
-              iskustva
+              <strong className="font-semibold text-brand-900 xl:text-white">
+                20+
+              </strong>{" "}
+              godina iskustva
             </div>
-            <div className="h-4 w-px bg-white/25" />
+            <div className="h-4 w-px bg-brand-900/20 xl:bg-white/25" />
             <div>
               VNŽ za{" "}
-              <strong className="font-semibold text-white">celu porodicu</strong>
+              <strong className="font-semibold text-brand-900 xl:text-white">
+                celu porodicu
+              </strong>
             </div>
           </motion.div>
         </div>
